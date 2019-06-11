@@ -21,6 +21,8 @@
 
 const express = require("express")
 const path = require("path")
+var friendArray = require("./app/data/friends");
+const reducer = (a, b) => a + b;
 
 var app = express();
 
@@ -36,7 +38,27 @@ app.use(express.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
+// ================================================================================
+// Math (Find the user total sum) - user[i](sum)
+// ================================================================================
+
+function sum(){
+  for (var i = 0; i < friendArray.Length; i++) {
+    let z = []
+    let x = userInput.scores.reduce(reducer)
+    let y = friendArray[i].scores.reduce(reducer)
+    let z = Math.abs(x - y)
+    let bestBuddy = Math.min(z)
+    console.log("bb: "+bestBuddy)
+    console.log("Z array" + z)
+  }
+
+}
+console.log("Total: "+friendArray[0].scores.reduce(reducer))
+  
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
+
+
