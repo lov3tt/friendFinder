@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+    <script src="../../server.js" type="text/javascript"></script>
+    
 </head>
 
 <body>
@@ -150,7 +151,7 @@
 
             <br>
             <h3>Question 9</h3>
-            <p>You strongly believe it's better to tell the truth to your rubber than to lie to it.</p>
+            <p>You strongly believe it's better to tell the truth to your rubber ducky than to lie to it.</p>
             <form>
                 <select id="q9" required>
                     <option value="" diabled selected hidden>Select an Option</option>
@@ -185,7 +186,7 @@
         <hr />
         <footer class="footer">
             <div class="container">
-                <p><a href="/api/friends">API Friends List</a> | <a href="*">GitHub Repo</a>
+                <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/lov3tt/friendFinder" target="_blank">GitHub Repo</a>
             </div>
         </footer>
 
@@ -194,13 +195,13 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Here's your new friend!</h5>
+                        <h5 class="modal-title">Here's your new friend! <span id =modalName></span></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="truee">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <p>Insert Img</p>
+                    <div class="modal-body" id="BFImage">
+                        <img src="bestFriendImg" alt="Your Friend Image" id="friendImage">
                     </div>
                 </div>
             </div>
@@ -234,19 +235,17 @@
                 $("#q8").val(),
                 $("#q9").val(),
                 $("#q10").val(),     
+            
             ]
         };
 
-        console.log(userData);
+        console.log("Guessing: " + userData);
+        
 
 
-        $.post("/api/friends", userData,
-        function(data) {
-            if (data){
-                alert("Registerd")
-            }
-        });
-
+        $.post("/api/friends", userData);
+        // sum()
     });
+
 
 </script>
