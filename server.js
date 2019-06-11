@@ -25,26 +25,26 @@ require("./app/routing/htmlRoutes")(app);
 
 var friendArray = require("./app/data/friends");
 
-function sum(){
-  for (var i = 0; i < friendArray.Length; i++) {
-    let x = userData.scores.reduce(reducer)
-    let y = friendArray[i].scores.reduce(reducer)
-    let z = [Math.abs(x - y)]
-    let bestBuddy = Math.min(z)
-    console.log("bb: "+bestBuddy)
-    console.log("Z array" + z)
-  }
-}
+// function sum(){
+//   for (var i = 0; i < friendArray.Length; i++) {
+//     let x = userData.scores.reduce(reducer)
+//     let y = friendArray[i].scores.reduce(reducer)
+//     let z = [Math.abs(x - y)]
+//     let bestBuddy = Math.min(z)
+//     console.log("bb: "+bestBuddy)
+//     console.log("Z array" + z)
+//   }
+// }
 // app.get("/api/friends", function(req, res) {
 //   res.json(friendData);
 // });
 
-var friendlol= this.bestBuddy
-var bestFriendImg = this.photo
-var bestFriendName = this.name
-console.log(friendlol)
-console.log(bestFriendImg)
-console.log(bestFriendName)
+// var friendlol= this.bestBuddy
+// var bestFriendImg = this.photo
+// var bestFriendName = this.name
+// console.log(friendlol)
+// console.log(bestFriendImg)
+// console.log(bestFriendName)
 // console.log(res)
 // console.log(friendData)
 
@@ -52,7 +52,7 @@ console.log(bestFriendName)
 // $("#BFImage").append(img)
 // $("#modalName").append(bestFriendName)
 
-sum()
+// sum()
 
 // console.log("Total: "+friendArray[0].scores.reduce(reducer))
   
